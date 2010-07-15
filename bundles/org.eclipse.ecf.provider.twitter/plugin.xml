@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ecf.identity.namespace">
+      <namespace
+            class="org.eclipse.ecf.provider.twitter.identity.TwitterNamespace"
+            description="Twitter Namespace"
+            name="ecf.namespace.twitter">
+      </namespace>
+   </extension>
+   <extension
+         point="org.eclipse.ecf.containerFactory">
+      <containerFactory
+            class="org.eclipse.ecf.provider.twitter.container.TwitterInstantiator"
+            hidden="false"
+            name="ecf.twitter.twitter4j"
+            server="false">
+      </containerFactory>
+   </extension>
+
+</plugin>

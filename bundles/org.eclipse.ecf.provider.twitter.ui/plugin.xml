@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ecf.ui.connectWizards">
+      <wizard
+            class="org.eclipse.ecf.internal.provider.twitter.ui.wizards.TwitterConnectWizard"
+            containerFactoryName="ecf.twitter.twitter4j"
+            id="org.eclipse.ecf.provider.twitter.ui.connectWizard"
+            name="Twitter"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            class="org.eclipse.ecf.internal.provider.twitter.ui.wizards.TwitterConnectWizard"
+            id="org.eclipse.ecf.provider.twitter.ui.connect"
+            name="Twitter"
+            icon="icons/new_connection.gif"
+            category="org.eclipse.ecf.ui.newConnection.category"
+            finalPerspective="org.eclipse.ecf.ui.perspective.communications">
+          <description>%YahooConnectWizardPage.description</description>
+      </wizard>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.menus">
+               <menuContribution
+            locationURI="popup:org.eclipse.ecf.presence.ui.MultiRosterView?before=additions">
+         <dynamic
+               class="TwitterUpdateContributionItem"
+               id="org.eclipse.ecf.presence.collab.ui.dynamic3">
+         </dynamic>
+      </menuContribution>
+   </extension>
+</plugin>
